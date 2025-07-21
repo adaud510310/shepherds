@@ -1,0 +1,94 @@
+/* RTL Support and Base Styles */
+:root {
+  font-family: "Tajawal", "Roboto", system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* RTL Direction */
+html {
+  direction: rtl;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+/* RTL specific adjustments */
+.container {
+  direction: rtl;
+}
+
+.row {
+  direction: rtl;
+}
+
+/* Override Bootstrap RTL classes if needed */
+.text-start {
+  text-align: right !important;
+}
+
+.text-end {
+  text-align: left !important;
+}
+
+.ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+.me-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.ms-2 {
+  margin-right: 0.5rem !important;
+  margin-left: 0 !important;
+}
+
+.me-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0 !important;
+}
+
+/* Ensure proper font loading */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
