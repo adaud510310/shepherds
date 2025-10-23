@@ -13,6 +13,9 @@ export const translations = {
 
     // Main Content
     mainTitle: "باقات الرعاية الرياضية",
+    featuresTitle: "المميـــزات",
+    competitionsTitle:
+      "المسابقــات التي يشـارك فيها الفريق والتي سيظهــر شعـــار الشركــــة فيها",
 
     // Sponsorship Packages
     packages: {
@@ -144,6 +147,14 @@ export const translations = {
 
     // Footer Social
     followUs: "تابعونا عبر مواقع التواصل الاجتماعي",
+    socialLinks: {
+      facebook: "https://www.facebook.com/alfaisalyfc",
+      instagram: "https://www.instagram.com/alfaisalyfc",
+      youtube: "https://www.youtube.com/@alfaisalyfc",
+      twitter: "https://twitter.com/alfaisalyfc",
+      snapchat: "https://www.snapchat.com/add/alfaisalyfc",
+      tiktok: "https://www.tiktok.com/@alfaisalyfc",
+    },
 
     // Footer Bottom
     copyright: "حقوق النشر alfaisalyfc ©",
@@ -165,6 +176,9 @@ export const translations = {
 
     // Main Content
     mainTitle: "Sports Sponsorship Packages",
+    featuresTitle: "Features",
+    competitionsTitle:
+      "Competitions in which the team participates and in which the company logo will appear",
 
     // Sponsorship Packages
     packages: {
@@ -296,6 +310,14 @@ export const translations = {
 
     // Footer Social
     followUs: "Follow us on social media",
+    socialLinks: {
+      facebook: "https://www.facebook.com/alfaisalyfc",
+      instagram: "https://www.instagram.com/alfaisalyfc",
+      youtube: "https://www.youtube.com/@alfaisalyfc",
+      twitter: "https://twitter.com/alfaisalyfc",
+      snapchat: "https://www.snapchat.com/add/alfaisalyfc",
+      tiktok: "https://www.tiktok.com/@alfaisalyfc",
+    },
 
     // Footer Bottom
     copyright: "Copyright alfaisalyfc ©",

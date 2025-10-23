@@ -116,10 +116,45 @@ body {
   color: white;
 }
 
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 15px;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Banner styles */
 .inner-banner {
   position: relative;
-  height: 350px;
+  height: 210px;
   background: linear-gradient(135deg, #2c2c2c 0%, #8b0000 100%);
   display: flex;
   align-items: center;
@@ -165,6 +200,29 @@ body {
 .page-main {
   padding: 40px 0;
   min-height: 60vh;
+  background: #f8f9fa;
+}
+
+/* Ensure 3 cards per row on large screens */
+@media (min-width: 992px) {
+  .col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 .b-title h2 {
@@ -198,14 +256,16 @@ body {
 /* Package Cards */
 .package-card {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: 520px;
+  max-width: 100%;
 }
 
 .package-card::before {
@@ -260,52 +320,69 @@ body {
 .package-image {
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .package-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.3s ease;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 10px;
 }
 
+/*.package-image img {
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}*/
 .package-card:hover .package-image img {
   transform: scale(1.05);
 }
 
 .package-content {
-  padding: 25px;
+  padding: 18px 20px 20px 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 2;
+  overflow-y: auto;
 }
 
 .package-title {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   text-align: center;
   border-bottom: 2px solid #f3d437;
   padding-bottom: 10px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   position: relative;
   z-index: 2;
+  line-height: 1.3;
 }
 
 .package-features {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   flex-grow: 1;
 }
 
 .features-title {
   color: #f3d437;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   position: relative;
@@ -320,9 +397,9 @@ body {
 
 .features-list li {
   color: #ffffff;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin-bottom: 6px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  margin-bottom: 5px;
   padding-right: 15px;
   position: relative;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
@@ -352,23 +429,23 @@ body {
 
 .package-competitions {
   border-top: 1px solid #f3d437;
-  padding-top: 15px;
+  padding-top: 12px;
   position: relative;
   z-index: 2;
 }
 
 .competitions-title {
   color: #f3d437;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .competitions-text {
   color: #f3d437;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-align: center;
   margin: 0;
   font-weight: 500;
@@ -541,15 +618,272 @@ body {
   background: #8b0000;
 }
 
+/* Contact Form Styles */
+.contact-form-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Sponsors Image Container */
+.sponsors-image-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.sponsors-image {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.sponsors-image:hover {
+  transform: scale(1.02);
+}
+
+.contact-form-title,
+.sponsors-title {
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-form-line,
+.sponsors-line {
+  width: 70px;
+  height: 3px;
+  background: #8b0000;
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: right;
+}
+
+[dir="ltr"] .form-label {
+  text-align: left;
+}
+
+.form-input,
+.form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: "Tajawal", sans-serif;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #8b0000;
+  box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.contact-submit-btn {
+  background: #8b0000;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Tajawal", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  background: #a00000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+.contact-submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Packages Carousel Styles */
+.packages-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+}
+
+.carousel-slide {
+  width: 33.333%;
+  flex-shrink: 0;
+  padding: 20px;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.carousel-btn {
+  background: #8b0000;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: #a00000;
+  transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #8b0000;
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background: #8b0000;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
   .top-bar .nav {
-    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #2c2c2c 0%, #8b0000 100%);
+    flex-direction: column;
+    padding: 15px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .top-bar .nav.nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .top-bar .nav-link {
-    font-size: 11px;
-    margin: 0 4px;
+    font-size: 14px;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+
+  .top-bar .nav-link:last-child {
+    border-bottom: none;
   }
 
   .page-title {
@@ -601,8 +935,62 @@ body {
     height: 35px;
     font-size: 18px;
   }
+
+  /* Cards already vertical, just adjust sizes */
+  .package-image {
+    height: 180px;
+  }
+
+  .package-content {
+    padding: 20px;
+  }
+
+  /* الحفاظ على التخطيط جنباً إلى جنب في الشاشات المتوسطة */
+  .contact-form-container,
+  .sponsors-image-container {
+    padding: 15px;
+    margin: 0 10px;
+    max-width: 350px;
+    height: 400px;
+  }
+
+  .contact-form-title,
+  .sponsors-title {
+    font-size: 1.2rem;
+  }
+
+  .contact-form {
+    gap: 12px;
+  }
+
+  .contact-submit-btn {
+    align-self: flex-end;
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .sponsors-image {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .carousel-slide {
+    padding: 10px;
+  }
+
+  .carousel-controls {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
 }
 
+/* للشاشات الصغيرة جداً فقط - تغيير التخطيط إلى عمودي */
 @media (max-width: 576px) {
   .inner-banner {
     height: 200px;
@@ -614,14 +1002,25 @@ body {
 
   .package-card {
     margin-bottom: 20px;
+    min-height: auto;
   }
 
   .package-content {
-    padding: 20px;
+    padding: 15px;
   }
 
   .package-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .package-image {
+    height: 150px;
+  }
+
+  .package-image img {
+    max-width: 140px;
+    max-height: 110px;
+    padding: 10px;
   }
 
   .features-title,
@@ -639,12 +1038,38 @@ body {
   }
 
   .top-bar .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #2c2c2c 0%, #8b0000 100%);
     flex-direction: column;
-    text-align: center;
+    padding: 15px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .top-bar .nav.nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .top-bar .nav-link {
-    margin: 2px 0;
+    font-size: 12px;
+    margin: 6px 0;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+
+  .top-bar .nav-link:last-child {
+    border-bottom: none;
   }
 
   .sponsors-grid {
@@ -658,5 +1083,42 @@ body {
 
   .sponsor-item img {
     max-height: 40px;
+  }
+
+  /* تغيير التخطيط إلى عمودي في الشاشات الصغيرة جداً */
+  .contact-form-container,
+  .sponsors-image-container {
+    padding: 12px;
+    margin: 0 10px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .contact-form-title,
+  .sponsors-title {
+    font-size: 1.1rem;
+  }
+
+  .contact-form-line,
+  .sponsors-line {
+    width: 50px;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .contact-submit-btn {
+    padding: 8px 15px;
+    font-size: 12px;
+    align-self: stretch;
+  }
+
+  .sponsors-image {
+    max-width: 100%;
+    margin-top: 8px;
   }
 }
