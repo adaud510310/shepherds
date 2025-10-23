@@ -1,12 +1,122 @@
-# React + Vite
+# 🏆 باقات الرعاية الرياضية - نادي الفيصلي
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+موقع عرض باقات الرعاية الرياضية لنادي الفيصلي للموسم 2025-2026
 
-Currently, two official plugins are available:
+## 📋 نبذة عن المشروع
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+تطبيق ويب تفاعلي لعرض باقات الرعاية المختلفة لنادي الفيصلي، مع دعم كامل للغتين العربية والإنجليزية ونظام RTL/LTR.
 
-## Expanding the ESLint configuration
+## ✨ المميزات
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌐 دعم كامل للغتين العربية والإنجليزية
+- 📱 تصميم متجاوب (Responsive) لجميع الأجهزة
+- 🎨 واجهة مستخدم حديثة وجذابة
+- ⚡ أداء سريع باستخدام Vite
+- 🔄 تبديل سلس بين اللغات
+- 📦 6 باقات رعاية مختلفة
+
+## 🛠️ التقنيات المستخدمة
+
+- **React 19.1.0** - مكتبة بناء واجهات المستخدم
+- **Vite 7.0.5** - أداة البناء والتطوير
+- **Bootstrap 5.3** - إطار عمل CSS
+- **Font Awesome 6.4** - الأيقونات
+- **SWC** - مترجم JavaScript/TypeScript السريع
+
+## 📦 الباقات المتوفرة
+
+1. **الراعي الرسمي** - Official Sponsor
+2. **الراعي الذهبي الأمامي** - Golden Front Sponsor
+3. **الراعي مشارك 01** - Partner Sponsor 01
+4. **الراعي مشارك 02** - Partner Sponsor 02
+5. **الراعي مشارك 03** - Partner Sponsor 03
+6. **الراعي الذهبي في خلف التشيرت** - Golden Back Sponsor
+
+## 🚀 التثبيت والتشغيل
+
+### المتطلبات الأساسية
+
+- Node.js (الإصدار 16 أو أحدث)
+- npm أو yarn
+
+### خطوات التثبيت
+
+```bash
+# استنساخ المشروع
+git clone <repository-url>
+
+# الدخول للمجلد
+cd shepherd
+
+# تثبيت الحزم
+npm install
+
+# تشغيل المشروع
+npm run dev
+```
+
+### الأوامر المتوفرة
+
+```bash
+# تشغيل سيرفر التطوير
+npm run dev
+
+# بناء المشروع للإنتاج
+npm run build
+
+# معاينة النسخة الإنتاجية
+npm run preview
+
+# فحص الأخطاء
+npm run lint
+
+# نشر المشروع على GitHub Pages
+npm run deploy
+```
+
+## 📁 هيكل المشروع
+
+```
+shepherd/
+├── public/              # الصور والملفات الثابتة
+├── src/
+│   ├── App.jsx         # المكون الرئيسي
+│   ├── App.css         # التنسيقات الرئيسية
+│   ├── main.jsx        # نقطة الدخول
+│   ├── index.css       # التنسيقات العامة
+│   └── translations.js # ملف الترجمات
+├── index.html          # ملف HTML الرئيسي
+├── package.json        # ملف التبعيات
+└── vite.config.js      # إعدادات Vite
+```
+
+## 🎨 التصميم
+
+- **الألوان الرئيسية:**
+
+  - أحمر الفيصلي: `#8b0000`
+  - الذهبي: `#f3d437`
+  - الأسود/الرمادي الداكن: `#1a1a1a`, `#2c2c2c`
+
+- **الخطوط:**
+  - العربية: Tajawal
+  - الإنجليزية: Roboto
+
+## 🌐 المتصفحات المدعومة
+
+- Chrome (آخر إصدارين)
+- Firefox (آخر إصدارين)
+- Safari (آخر إصدارين)
+- Edge (آخر إصدارين)
+
+## 📝 الترخيص
+
+هذا المشروع خاص بنادي الفيصلي
+
+## 👨‍💻 المطور
+
+تصميم وبرمجة بواسطة [اسم المطور]
+
+---
+
+© 2025 نادي الفيصلي - جميع الحقوق محفوظة
