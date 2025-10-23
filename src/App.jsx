@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { translations } from "./translations";
+
 function App() {
   const [language, setLanguage] = useState("ar");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +13,11 @@ function App() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const t = translations[language];
+
+  // Helper function to get correct image path
+  const getImagePath = (imageName) => {
+    return `${import.meta.env.BASE_URL}${imageName}`;
+  };
 
   const toggleLanguage = () => {
     setLanguage(language === "ar" ? "en" : "ar");
@@ -100,12 +106,12 @@ ${contactForm.message}
 
   // Package data with images
   const packages = [
-    { key: "official", image: "/aldrees_logo.jpg" },
-    { key: "goldenFront", image: "/ROCO.jpg" },
-    { key: "partner01", image: "/شعار-الرميح.jpg" },
-    { key: "partner02", image: "/04.jpg" },
-    { key: "partner03", image: "/05.jpg" },
-    { key: "goldenBack", image: "/001.jpg" },
+    { key: "official", image: getImagePath("aldrees_logo.jpg") },
+    { key: "goldenFront", image: getImagePath("ROCO.jpg") },
+    { key: "partner01", image: getImagePath("شعار-الرميح.jpg") },
+    { key: "partner02", image: getImagePath("04.jpg") },
+    { key: "partner03", image: getImagePath("05.jpg") },
+    { key: "goldenBack", image: getImagePath("001.jpg") },
   ];
 
   return (
@@ -186,7 +192,7 @@ ${contactForm.message}
           <div className="banner-content">
             <div className="page-title">{t.bannerTitle}</div>
             <div className="banner-logo">
-              <img src="/شعار-ابيض.png" alt="Al-Faisaly Logo" loading="eager" />
+              <img src={getImagePath("شعار-ابيض.png")} alt="Al-Faisaly Logo" loading="eager" />
             </div>
           </div>
         </div>
@@ -346,7 +352,7 @@ ${contactForm.message}
                   <h3 className="sponsors-title">الرعاة الحاليين والسابقين</h3>
                   <div className="sponsors-line"></div>
                   <img
-                    src="/99.jpg"
+                    src={getImagePath("99.jpg")}
                     alt="الرعاة الحاليين والسابق"
                     loading="lazy"
                     className="sponsors-image"
@@ -363,7 +369,7 @@ ${contactForm.message}
               <div className="col-xl-4">
                 <div className="logo text-center mb-3">
                   <img
-                    src="/شعار-ابيض.png"
+                    src={getImagePath("شعار-ابيض.png")}
                     alt="Al-Faisaly"
                     loading="lazy"
                     style={{ height: "50px" }}
