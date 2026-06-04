@@ -9,7 +9,7 @@ export const translations = {
     langButton: "English",
 
     // Banner
-    bannerTitle: "باقات الرعاية للموسم 2025-2026",
+    bannerTitle: "باقات الرعاية للموسم 2026-2027",
 
     // Main Content
     mainTitle: "باقات الرعاية الرياضية",
@@ -172,7 +172,7 @@ export const translations = {
     langButton: "العربية",
 
     // Banner
-    bannerTitle: "Sponsorship Packages for the 2025-2026 Season",
+    bannerTitle: "Sponsorship Packages for the 2026-2027 Season",
 
     // Main Content
     mainTitle: "Sports Sponsorship Packages",
